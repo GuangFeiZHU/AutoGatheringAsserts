@@ -1,23 +1,3 @@
-#获取网卡信息
-# import os
-# class Nic():
-#     def __init__(self):
-#         pass
-#
-#     @classmethod
-#     def initial(cls):
-#         return cls()
-#
-#     def process(self,cmd_func,debug):
-#         if debug:
-#             now_path = os.path.abspath(__file__)
-#             file_path_cpu = os.path.join(os.path.dirname(now_path), 'files', 'nic.out')
-#             f = open(file_path_cpu, 'r')
-#             out_put = f.read()
-#         else:
-#             out_put=cmd_func('')
-
-#!/usr/bin/env python
 # -*- coding:utf-8 -*-
 import os
 import re

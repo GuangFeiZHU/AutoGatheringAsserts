@@ -1,6 +1,7 @@
-#可执行文件
+# 可执行文件
 import os
-os.environ['USER_SETTINGS']='config.settings'
+
+os.environ['USER_SETTINGS'] = 'config.settings'
 
 from src.script import run
 

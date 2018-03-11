@@ -1,28 +1,29 @@
 import os
 from config.settings import BASEDIR
-class Memory():
 
+
+class Memory():
     def __init__(self):
         pass
 
     @classmethod
     def initial(cls):
-         return cls()
+        return cls()
 
-    def process(self,cmd_func,debug):
+    def process(self, cmd_func, debug):
         if debug:
             file_path_memory = os.path.join(BASEDIR, 'files', 'memory.out')
-            f = open(file_path_memory, 'r',encoding='utf-8')
+            f = open(file_path_memory, 'r', encoding='utf-8')
             out_put = f.read()
         else:
-            out_put=cmd_func("sudo dmidecode  -q -t 17 2>/dev/null")
+            out_put = cmd_func("sudo dmidecode  -q -t 17 2>/dev/null")
         return self.parase(out_put)
 
-
-    def parase(self,content):
+    def parase(self, content):
         content_list = content.split('\n\n')
         response_dict = {}
-        pattern = {'Size':'size', 'Type':'model', 'Speed':'speed', 'Manufacturer':'manufacturer', 'Serial Number':'sn'}
+        pattern = {'Size': 'size', 'Type': 'model', 'Speed': 'speed', 'Manufacturer': 'manufacturer',
+                   'Serial Number': 'sn'}
         for memory_item in content_list:
             tem_dict = {}
             for sub_item in memory_item.split('\n'):

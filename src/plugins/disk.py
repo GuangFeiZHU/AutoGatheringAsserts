@@ -1,22 +1,24 @@
-#查看硬盘信息
+# 查看硬盘信息
 import os
 import re
 from config.settings import BASEDIR
-class Disk():
 
+
+class Disk():
     def __init__(self):
         pass
+
     @classmethod
     def initial(cls):
         return cls()
 
-    def process(self,cmd_func,debug):
+    def process(self, cmd_func, debug):
         if debug:
             file_path_disk = os.path.join(BASEDIR, 'files', 'disk.out')
-            f = open(file_path_disk, 'r',encoding='utf-8')
+            f = open(file_path_disk, 'r', encoding='utf-8')
             out_put = f.read()
         else:
-            out_put=cmd_func('MegaCli -PDList -aALL')
+            out_put = cmd_func('MegaCli -PDList -aALL')
         return self.parse(out_put)
 
     def parse(self, content):
@@ -42,4 +44,3 @@ class Disk():
                 elif sub_item_list[0] == 'PD Type':
                     tem_dict['pd_type'] = sub_item_list[1]
         return response_dict
-

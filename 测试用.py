@@ -2,8 +2,9 @@ import re
 import os
 
 from config import settings
+
 print(settings.BASEDIR)
-#测试CPU
+# 测试CPU
 # now_path=os.path.abspath(__file__)
 # file_path_cpu=os.path.join(os.path.dirname(now_path),'files','cpuinfo.out')
 # f=open(file_path_cpu,'r')
@@ -19,7 +20,7 @@ print(settings.BASEDIR)
 #         if not response['cpu_model']:
 #             response['cpu_model']=item_list[1]
 
-#测试disk
+# 测试disk
 # des={'Slot': 'slot', 'Raw Size': 'capacity', 'Inquiry': 'model', 'PD Type': 'pd_type'}
 #
 # now_path=os.path.abspath(__file__)
